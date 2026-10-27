@@ -1,0 +1,16 @@
+[Unit]
+Description=Support tickets Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bot
+WorkingDirectory=/opt/support-tickets-bot
+EnvironmentFile=/opt/support-tickets-bot/.env
+ExecStart=/opt/support-tickets-bot/.venv/bin/python main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+services:
+  bot:
+    build: .
+    container_name: support-tickets-bot
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
